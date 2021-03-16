@@ -14,7 +14,7 @@ const GroupStr = ({ color }) => {
 
     return (
         <StyledGroupStr>
-            {arrayStr.map((item, index) => <GroupStrItem item={item} key={`${item}__${index}`} id={uniqid()} color={ color }/>)}
+            {arrayStr.map((item, index) => <GroupStrItem item={item} key={`${item}__${index}`} id={item} color={ color }/>)}
         </StyledGroupStr>
     )
 }

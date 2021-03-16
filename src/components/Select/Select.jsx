@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 
 const Select = () => {
-    useEffect = () => {
-        localStorage.getItem
-    }
+    // useEffect = () => {
+    //     localStorage.getItem
+    // }
     return (
         <select>
-            <option value=""></option>
+            <option value="hello"></option>
         </select>
     )
 }

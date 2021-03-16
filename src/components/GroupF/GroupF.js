@@ -8,7 +8,7 @@ const GroupF = ({ color }) => {
 
     return (
         <StyledGroupNumber>
-            {arrayF.map( (item, index) => <GroupFItem item={item} key={`${item}__${index}`} id={uniqid()} color={ color }/>)}
+            {arrayF.map( (item, index) => <GroupFItem item={item} key={`${item}__${index}`} id={item} color={ color }/>)}
         </StyledGroupNumber>
     )
 }

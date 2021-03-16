@@ -8,9 +8,10 @@ const Input = ({ color }) => {
         setPresetName(e.target.value);
     }
 
-    const onSavePreset = (e) => {
+    const onSavePreset = () => {
+        const keys = JSON.parse(localStorage.getItem('keys')) || {};
         const oldPresets = JSON.parse(localStorage.getItem('presets')) || {};
-        const newPreset = {...oldPresets, [presetName] : color }
+        const newPreset = {...oldPresets, [presetName] : keys }
         localStorage.setItem( 'presets', JSON.stringify(newPreset));
         
     }
