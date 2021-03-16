@@ -16,6 +16,10 @@ export const StyledStrItem = styled.div.attrs(props => ({
     transition: box-shadow .5s;
     text-transform: uppercase;
     box-shadow: 0px 0px 0px 1px;
+
+    &:nth-child(43){
+        flex: 1
+    }
     
     &:hover {
     box-shadow: 1px -1px 4px 2px rgba(166,166,166,0.75) inset;
