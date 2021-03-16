@@ -5,7 +5,6 @@ import { StyledStrItem } from '../GroupStr/StyledStrItem';
 
 const GroupFItem = ({item, id, color }) => {
     useEffect(() => {
-        console.log('effect');
         const oldKeys = JSON.parse(localStorage.getItem('keys')) || {};
         const newKeys = {...oldKeys, [id] : color }
         localStorage.setItem( 'keys', JSON.stringify(newKeys));

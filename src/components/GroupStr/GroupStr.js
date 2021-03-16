@@ -1,7 +1,6 @@
 import React from "react";
 import GroupStrItem from "./GroupStrItem";
 import { StyledGroupStr } from './StyledGroupStr';
-import uniqid from 'uniqid';
 // import './GroupStr.css';
 
  const arrayStr = ['tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '|', 'caps lock', 'a', 's', 'd',

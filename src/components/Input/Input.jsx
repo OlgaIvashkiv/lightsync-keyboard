@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import Select from '../Select/Select';
 
-const Input = ({ color }) => {
-    const [presetName, setPresetName] = useState('')
+const Input = () => {
+    const [presetName, setPresetName] = useState('');
 
     const onSelectColorScheme = (e) => {
-        console.log(e.target.value, 'input value');
         setPresetName(e.target.value);
     }
 
@@ -22,6 +22,7 @@ const Input = ({ color }) => {
         <button onClick={onSavePreset}>
             Save preset
         </button>
+        <Select />
          </>   
       
     )

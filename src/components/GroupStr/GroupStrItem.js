@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { StyledStrItem } from './StyledStrItem';
 
-const GroupStrItem = ({item, id, color }) => {
+const GroupStrItem = ({ item, id, color }) => {
     useEffect(() => {
-        console.log('effect');
         const oldKeys = JSON.parse(localStorage.getItem('keys')) || {};
         const newKeys = {...oldKeys, [id] : color }
         localStorage.setItem( 'keys', JSON.stringify(newKeys));
@@ -15,7 +14,7 @@ const GroupStrItem = ({item, id, color }) => {
 
     return (
         <StyledStrItem color={ color } onClick={ onHandleClick }>
-            {item}
+            { item }
         </StyledStrItem>
     )
 }

@@ -1,12 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react';
+import Option from './Option';
 
 const Select = () => {
-    // useEffect = () => {
-    //     localStorage.getItem
-    // }
+    const [preset, setPreset] = useState(['default']);
+
+    const onSelectChange = () => {
+        const presets = JSON.parse(localStorage.getItem('presets'));
+        const newPresets = [...Object.keys(presets)]
+        setPreset(newPresets);
+    };
+
     return (
-        <select>
-            <option value="hello"></option>
+        <select onClick={ onSelectChange }>
+            {
+                preset.map((item, index) => <Option value={item} key={`${item}_${index}`}/>)
+            }
+            
         </select>
     )
 }

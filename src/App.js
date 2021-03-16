@@ -4,7 +4,6 @@ import Keyboard from "./components/Keyboard/Keyboard";
 
 import './App.css';
 import Input from './components/Input/Input';
-import Select from './components/Select/Select';
 
 
 function App() {
@@ -18,7 +17,6 @@ const [color, setColor] = useState('#fff');
       />
         <Keyboard color={ color }/>
         <Input color={ color } />
-        <Select />
       </div>
   );
 }
