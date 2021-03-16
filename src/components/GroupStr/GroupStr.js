@@ -6,7 +6,7 @@ import uniqid from 'uniqid';
 
  const arrayStr = ['tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '|', 'caps lock', 'a', 's', 'd',
         'f', 'g','h', 'j', 'k', 'l', ';', '"', 'enter', 'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '/',
-        'ctrl', 'fn', 'wind', 'alt', 'space', 'alt', 'fn', 'ctrl'
+        'ctrl', 'fn', 'win', 'alt', 'space', 'alt', 'fn', 'ctrl'
     ];
 
 const GroupStr = ({ color }) => {
