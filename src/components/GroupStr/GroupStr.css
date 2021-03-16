@@ -1,0 +1,11 @@
+.group_str {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 3px;
+    row-gap: 5px;
+}
+
+#space {
+    flex: 1;
+}

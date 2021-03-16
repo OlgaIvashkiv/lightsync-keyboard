@@ -1,0 +1,10 @@
+.group_f {
+    display: flex;
+    column-gap: 5px;
+}
+
+.group-f_item {
+    width: 35px;
+    height: 55px;
+}
+
