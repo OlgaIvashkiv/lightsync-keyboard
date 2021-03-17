@@ -5,31 +5,16 @@ import { StyledKeysGroup } from '../styledKeys';
 
 const arr = [...arrayF, ...arrayNumber, ...arrayStr]
 
-const GroupF = ({ color, onClickKey, click, }) => {
-    const [colorKeys, setColorKeys] = useState([])
-
-    useEffect( () => {
-        const keys = JSON.parse(localStorage.getItem('keys'));
-        console.log(keys, 'keys from groupF');
-        setColorKeys(keys);
-
-    },[click]);
-
-    // console.log(colorKeys, 'colorkeys')
-
-
+const GroupF = ({ onClickKey }) => {
 
     return (
         <StyledKeysGroup>
             { arr.map( (item, index) =>
                 <GroupFItem
-                    colorKeysArray = { colorKeys }
                     item={ item }
                     key={ `${ item }__${ index }` }
                     id={ `${ item }_${ index }`}
-                    color={ color }
                     onClickKey= { onClickKey }
-                    colorKeys={ colorKeys }
                 />
 
             ) }
