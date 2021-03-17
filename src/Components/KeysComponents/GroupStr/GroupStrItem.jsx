@@ -13,7 +13,7 @@ const GroupStrItem = ({ item, id, color }) => {
   }, [color, id]);
 
     const onHandleClick = (e) => {
-        console.log(e.target.attributes.color.value,id, 'event')
+        console.log(e.target, 'event from groupstritem')
     };
 
     return (

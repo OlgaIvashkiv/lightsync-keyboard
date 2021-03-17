@@ -3,48 +3,54 @@ import { HuePicker } from 'react-color';
 
 import Keyboard from "./Components/Keyboard/Keyboard.jsx";
 import Input from './Components/Input/Input';
+import { arrayF, arrayNumber, arrayStr } from './constants';
 
 import './App.css';
 
+const allKeysArray = [...arrayF, ...arrayNumber, ...arrayStr];
+const defaultKeys = allKeysArray.map(button => {
+    return {[button]: '#ffffff'}
+});
 
 const App = () => {
-    const [color, setColor] = useState('#fff');
-    const [newColor, setNewColor] = useState({id: '#fff'});
-    const [id, setId] = useState('');
+    const [color, setColor] = useState('#ffffff');
+    // const [newColor, setNewColor] = useState({});
+    const [click, setClick] = useState(false);
 
 useEffect(() => {
+    const defKeys = Object.assign(...defaultKeys);
+    localStorage.setItem( 'keys', JSON.stringify(defKeys));
 
-    const keys = JSON.parse(localStorage.getItem('keys')) || {};
-    const newKeys = {...keys, ...newColor}
-    localStorage.setItem( 'keys', JSON.stringify(newKeys));
+  },[]);
 
-
-  },[newColor]);
 
 const onClickKey = (e) => {
-    const id = e.target.id;
-    setId(id);
 
-    setNewColor(prev => ({
-                ...prev,
-                [id]: color
-            }));
+    const id = e.target.id;
+    console.log('click keys');
+
+    const obj = { [id]: color }
+    const oldKeys = JSON.parse(localStorage.getItem('keys'));
+    const newKeys = {...oldKeys, ...obj }
+    localStorage.setItem( 'keys', JSON.stringify(newKeys));
+    setClick(!click);
   
 }
-console.log(newColor, 'newcolor')
 
 const onChangeColor = (color) => {
   setColor(color);
+};
+
+const onInputColorChange = (e) => {
+    const inputColor = e.target.value;
+    console.log(inputColor, 'inputcolor');
+    setColor(inputColor);
 }
 
   return (
       <div className='app'>
-        <HuePicker 
-        color={ color } 
-        newColor = { newColor }
-        onChange={ updatedColor => setColor(updatedColor.hex) }
-      />
-        <Keyboard color={ color } onChangeColor={ onChangeColor } onClickKey={ onClickKey }/>
+        <input type='color' onChange={onInputColorChange} value={color}/>
+        <Keyboard click={click} onChangeColor={ onChangeColor } onClickKey={ onClickKey }/>
         <Input onChangeColor={ onChangeColor }/>
       </div>
   );

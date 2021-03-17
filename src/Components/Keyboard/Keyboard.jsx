@@ -4,13 +4,13 @@ import GroupNumber from "../KeysComponents/GroupNumber/GroupNumber.jsx";
 import GroupStr from "../KeysComponents/GroupStr/GroupStr.jsx";
 import { StyledKeyboard } from './StyledKeyboard';
 
-const Keyboard = ({ color, onChangeColor, onClickKey }) => {
+const Keyboard = ({ color, onChangeColor, onClickKey, click }) => {
 
     return (
         <StyledKeyboard color={ color } >
-            <GroupF color={ color } onClickKey= { onClickKey } />
-            <GroupNumber color={ color } onChangeColor= { onChangeColor } />
-            <GroupStr color={ color } onChangeColor= { onChangeColor }/>
+            <GroupF click={click} color={ color } onClickKey= { onClickKey } />
+            {/*<GroupNumber color={ color } onChangeColor= { onChangeColor } />*/}
+            {/*<GroupStr color={ color } onChangeColor= { onChangeColor }/>*/}
         </StyledKeyboard>
     )
 }

@@ -10,9 +10,9 @@ export const StyledKeysGroup = styled.div`
 `
 
 export const StyledKeyItem = styled.div.attrs(props => ({
-    style: {
-      borderColor: props.color,
-    },
+    // style: {
+    //   borderColor: props.color || '#ffffff',
+    // },
   }))`
     border: 2px solid #9A9A9A;
     border-radius: 6px;
