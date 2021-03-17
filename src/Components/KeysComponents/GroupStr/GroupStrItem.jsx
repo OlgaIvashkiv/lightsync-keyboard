@@ -1,21 +1,25 @@
 import React, { useEffect } from "react";
-import { StyledStrItem } from './StyledStrItem';
+import { StyledKeyItem } from '../styledKeys';
 
 const GroupStrItem = ({ item, id, color }) => {
+    // const [clicked, setClicked]
+
     useEffect(() => {
         const oldKeys = JSON.parse(localStorage.getItem('keys')) || {};
         const newKeys = {...oldKeys, [id] : color }
         localStorage.setItem( 'keys', JSON.stringify(newKeys));
-  }, [color]);
+        const presets = JSON.parse(localStorage.getItem('presets')) ||  {'default' : oldKeys};
+        localStorage.setItem( 'presets', JSON.stringify(presets));
+  }, [color, id]);
 
     const onHandleClick = (e) => {
         console.log(e.target.attributes.color.value,id, 'event')
     };
 
     return (
-        <StyledStrItem color={ color } onClick={ onHandleClick }>
+        <StyledKeyItem color={ color } onClick={ onHandleClick }>
             { item }
-        </StyledStrItem>
+        </StyledKeyItem>
     )
 }
 

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-// import './GroupNumber.css';
-import { StyledStrItem } from '../GroupStr/StyledStrItem';
+import { StyledKeyItem } from '../styledKeys';
 
 
 const GroupNumberItem = ({ item, id, color }) => {
@@ -8,12 +7,12 @@ const GroupNumberItem = ({ item, id, color }) => {
         const oldKeys = JSON.parse(localStorage.getItem('keys')) || {};
         const newKeys = {...oldKeys, [id] : color }
         localStorage.setItem( 'keys', JSON.stringify(newKeys));
-  }, [color]);
+  }, [color, id]);
     
     return (
-        <StyledStrItem color={ color } onClick={ () => console.log('click', item, id)}>
-            {item}
-        </StyledStrItem>
+        <StyledKeyItem color={ color } onClick={ () => console.log('click', color, id) }>
+            { item }
+        </StyledKeyItem>
     );
 }
 

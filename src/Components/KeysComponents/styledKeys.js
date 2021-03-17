@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 
-export const StyledStrItem = styled.div.attrs(props => ({
+export const StyledKeysGroup = styled.div`
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 5px;
+
+`
+
+export const StyledKeyItem = styled.div.attrs(props => ({
     style: {
       borderColor: props.color,
     },
@@ -13,7 +22,7 @@ export const StyledStrItem = styled.div.attrs(props => ({
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: box-shadow .5s;
+    transition: box-shadow .3s;
     text-transform: uppercase;
     box-shadow: 0px 0px 0px 1px;
 
@@ -22,8 +31,8 @@ export const StyledStrItem = styled.div.attrs(props => ({
     }
     
     &:hover {
-    box-shadow: 1px -1px 4px 2px rgba(166,166,166,0.75) inset;
-    -webkit-box-shadow: 1px -1px 4px 2px rgba(166,166,166,0.75) inset;
-    -moz-box-shadow: 1px -1px 4px 2px rgba(166,166,166,0.75) inset;
+    box-shadow: 1px 1px 2px 2px rgba(166,166,166,0.75) ;
+    -webkit-box-shadow: 1px 1px 2px 2px rgba(166,166,166,0.75) ;
+    -moz-box-shadow: 1px 1px 2px 2px rgba(166,166,166,0.75);
 }
 `
