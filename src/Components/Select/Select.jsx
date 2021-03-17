@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Option from './Option';
 
 const SelectComponent = ({ onChangeColor }) => {
-    const [presetsName, setPresetsName] = useState(['default']);
+    const [presetsName, setPresetsName] = useState(['default', 'hello']);
 
     const onSelectClick = () => {
         const presets = JSON.parse(localStorage.getItem('presets'));
@@ -15,10 +15,10 @@ const SelectComponent = ({ onChangeColor }) => {
         const preset = e.target.value;
         const presets = JSON.parse(localStorage.getItem('presets'));
     const foundPreset = presets[preset];
-    const colors = Object.values(foundPreset);
-    
-    onChangeColor(colors[0])
+    console.log(foundPreset, 'foundpreset');
     };
+
+
 
     return (
         <select onClick={ onSelectClick } onChange={ onChangeOption } >

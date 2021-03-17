@@ -12,22 +12,22 @@ const defaultKeys = allKeysArray.map(button => {
     return {[button]: '#ffffff'}
 });
 
+// const defaultPreset = {default: ...defaultKeys};
+
 const App = () => {
     const [color, setColor] = useState('#ffffff');
-    // const [newColor, setNewColor] = useState({});
     const [click, setClick] = useState(false);
 
 useEffect(() => {
     const defKeys = Object.assign(...defaultKeys);
     localStorage.setItem( 'keys', JSON.stringify(defKeys));
-
-  },[]);
+    localStorage.setItem('presets', JSON.stringify({default: defKeys}))
+},[]);
 
 
 const onClickKey = (e) => {
 
     const id = e.target.id;
-    console.log('click keys');
 
     const obj = { [id]: color }
     const oldKeys = JSON.parse(localStorage.getItem('keys'));
@@ -39,6 +39,8 @@ const onClickKey = (e) => {
 
 const onChangeColor = (color) => {
   setColor(color);
+    setClick(!click);
+
 };
 
 const onInputColorChange = (e) => {

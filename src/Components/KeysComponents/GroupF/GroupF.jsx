@@ -5,7 +5,7 @@ import { StyledKeysGroup } from '../styledKeys';
 
 const arr = [...arrayF, ...arrayNumber, ...arrayStr]
 
-const GroupF = ({ color, onClickKey, click }) => {
+const GroupF = ({ color, onClickKey, click, }) => {
     const [colorKeys, setColorKeys] = useState([])
 
     useEffect( () => {
@@ -15,7 +15,8 @@ const GroupF = ({ color, onClickKey, click }) => {
 
     },[click]);
 
-    console.log(colorKeys, 'colorkeys')
+    // console.log(colorKeys, 'colorkeys')
+
 
 
     return (
@@ -25,7 +26,7 @@ const GroupF = ({ color, onClickKey, click }) => {
                     colorKeysArray = { colorKeys }
                     item={ item }
                     key={ `${ item }__${ index }` }
-                    id={ item}
+                    id={ `${ item }_${ index }`}
                     color={ color }
                     onClickKey= { onClickKey }
                     colorKeys={ colorKeys }
