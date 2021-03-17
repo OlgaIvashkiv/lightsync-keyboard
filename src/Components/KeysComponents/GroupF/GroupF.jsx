@@ -25,7 +25,7 @@ const GroupF = ({ color, onClickKey, click }) => {
                     colorKeysArray = { colorKeys }
                     item={ item }
                     key={ `${ item }__${ index }` }
-                    id={ item }
+                    id={ item}
                     color={ color }
                     onClickKey= { onClickKey }
                     colorKeys={ colorKeys }
