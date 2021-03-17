@@ -6,26 +6,32 @@ import { StyledKeysGroup } from '../styledKeys';
 const arr = [...arrayF, ...arrayNumber, ...arrayStr]
 
 const GroupF = ({ color, onClickKey, click }) => {
-    const [colorKeys, setColorKeys] = useState({})
+    const [colorKeys, setColorKeys] = useState([])
 
-    // useEffect( () => {
-    //     const keys = JSON.parse(localStorage.getItem('keys'));
-    //     console.log(keys, 'keys from groupF');
-    //     setColorKeys(keys);
-    //
-    // },[click]);
+    useEffect( () => {
+        const keys = JSON.parse(localStorage.getItem('keys'));
+        console.log(keys, 'keys from groupF');
+        setColorKeys(keys);
+
+    },[click]);
+
+    console.log(colorKeys, 'colorkeys')
+
 
     return (
         <StyledKeysGroup>
             { arr.map( (item, index) =>
-            <GroupFItem 
-                item={ item } 
-                key={ `${ item }__${ index }` } 
-                id={ item } 
-                color={ color }
-                onClickKey= { onClickKey }
-                colorKeys={ colorKeys }
-                />) }
+                <GroupFItem
+                    colorKeysArray = { colorKeys }
+                    item={ item }
+                    key={ `${ item }__${ index }` }
+                    id={ item }
+                    color={ color }
+                    onClickKey= { onClickKey }
+                    colorKeys={ colorKeys }
+                />
+
+            ) }
         </StyledKeysGroup>
     )
 }

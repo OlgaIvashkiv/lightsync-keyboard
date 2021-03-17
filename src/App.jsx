@@ -49,7 +49,7 @@ const onInputColorChange = (e) => {
 
   return (
       <div className='app'>
-        <input type='color' onChange={onInputColorChange} value={color}/>
+        <input type='color' onChange={onInputColorChange} value={ color }/>
         <Keyboard click={click} onChangeColor={ onChangeColor } onClickKey={ onClickKey }/>
         <Input onChangeColor={ onChangeColor }/>
       </div>

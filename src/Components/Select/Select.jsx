@@ -13,7 +13,7 @@ const SelectComponent = ({ onChangeColor }) => {
 
     const onChangeOption = (e) => {
         const preset = e.target.value;
-           const presets = JSON.parse(localStorage.getItem('presets'));
+        const presets = JSON.parse(localStorage.getItem('presets'));
     const foundPreset = presets[preset];
     const colors = Object.values(foundPreset);
     
@@ -21,7 +21,7 @@ const SelectComponent = ({ onChangeColor }) => {
     };
 
     return (
-        <select onClick={ onSelectClick } onChange={ onChangeOption } options={presetsName}>
+        <select onClick={ onSelectClick } onChange={ onChangeOption } >
             {
                 presetsName.map((item, index) => 
                 <Option value={ item } key={ `${ item }_${ index }` }/>)
