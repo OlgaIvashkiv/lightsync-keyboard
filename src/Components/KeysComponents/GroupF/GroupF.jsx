@@ -3,7 +3,7 @@ import GroupFItem from "./GroupFItem.jsx";
 import { arrayF } from '../../../constants';
 import { StyledKeysGroup } from '../styledKeys';
 
-const GroupF = ({ color, onClickKey }) => {
+const GroupF = ({ color }) => {
 
     return (
         <StyledKeysGroup>
@@ -13,7 +13,6 @@ const GroupF = ({ color, onClickKey }) => {
                 key={ `${ item }__${ index }` } 
                 id={ item } 
                 color={ color }
-                onClickKey= { onClickKey }
                 />) }
         </StyledKeysGroup>
     )

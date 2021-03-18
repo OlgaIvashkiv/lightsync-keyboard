@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { StyledKeyItem } from '../styledKeys';
 
-
-const GroupFItem = ({ item, id, color, onClickKey }) => {
+const GroupFItem = ({ item, id, color }) => {
     useEffect(() => {
         const oldKeys = JSON.parse(localStorage.getItem('keys')) || {};
         const newKeys = {...oldKeys, [id] : color }
@@ -10,7 +9,7 @@ const GroupFItem = ({ item, id, color, onClickKey }) => {
   }, [color, id]);
 
     return (
-        <StyledKeyItem color={ color } onClick={ onClickKey } id={ id }>
+        <StyledKeyItem color={ color }  id={ id }>
             { item }
         </StyledKeyItem>
     )

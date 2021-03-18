@@ -21,10 +21,7 @@ export const StyledKeyboard = styled.div`
     cursor: pointer;
     transition: box-shadow .5s;
     text-transform: uppercase;
-    box-shadow: 0px 0px 0px 2px;
-    border-color: ${ props => props.color };
-    -webkit-box-shadow: 0px 0px 0px 2px ${ props => props.color };
-    -moz-box-shadow: 0px 0px 0px 2px ${ props => props.color };
+    box-shadow: 0 0 0 2px;
 }
 
 &.btn:hover {

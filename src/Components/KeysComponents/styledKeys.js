@@ -24,7 +24,7 @@ export const StyledKeyItem = styled.div.attrs(props => ({
     cursor: pointer;
     transition: box-shadow .3s;
     text-transform: uppercase;
-    box-shadow: 0px 0px 0px 1px;
+    box-shadow: 0 0 0 1px;
 
     &:nth-child(43){
         flex: 1
