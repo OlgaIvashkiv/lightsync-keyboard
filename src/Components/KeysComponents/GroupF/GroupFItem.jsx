@@ -7,7 +7,7 @@ const GroupFItem = ({ item, id, onClickKey }) => {
     React.useEffect(() => {
         setColor(JSON.parse(localStorage.getItem('keys'))[id]);
 
-    }, [item]);
+    });
     return (
         <StyledKeyItem color={ color } onClick={ onClickKey } id={ id } >
             { item }
