@@ -2,8 +2,12 @@ import React from "react";
 import { StyledKeyItem } from '../styledKeys';
 
 const GroupFItem = ({ item, id, onClickKey }) => {
+    const [color, setColor] = React.useState('#ffffff');
 
-    const color = JSON.parse(localStorage.getItem('keys'))[id];
+    React.useEffect(() => {
+        setColor(JSON.parse(localStorage.getItem('keys'))[id]);
+
+    }, [item]);
     return (
         <StyledKeyItem color={ color } onClick={ onClickKey } id={ id } >
             { item }
