@@ -1,7 +1,6 @@
 import React from "react";
 import { StyledKeyItem } from '../styledKeys';
 
-
 const GroupFItem = ({ item, id, onClickKey }) => {
 
     const color = JSON.parse(localStorage.getItem('keys'))[id];

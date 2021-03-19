@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import Option from './Option';
-
 const SelectComponent = ({ onChangeColor }) => {
     const [presetsName, setPresetsName] = useState(['default']);
 
@@ -14,19 +12,19 @@ const SelectComponent = ({ onChangeColor }) => {
     const onChangeOption = (e) => {
         const preset = e.target.value;
         const presets = JSON.parse(localStorage.getItem('presets'));
-    const foundPreset = presets[preset];
-    localStorage.setItem('keys', JSON.stringify(foundPreset));
+        const foundPreset = presets[preset];
+        localStorage.setItem('keys', JSON.stringify(foundPreset));
 
-    console.log(foundPreset, 'foundpreset');
+        console.log(foundPreset, 'foundpreset');
     };
 
     return (
         <select onClick={ onSelectClick } onChange={ onChangeOption } >
             {
-                presetsName.map((item, index) => 
-                <Option value={ item } key={ `${ item }_${ index }` }/>)
+                presetsName.map((item, index) =>
+                    <option value={ item } key={ `${ item }_${ index }` }> { item } </option>)
             }
-            
+
         </select>
     )
 }

@@ -5,8 +5,10 @@ import { StyledInput, StyledButton } from './styles';
 
 const Input = ({ onChangeColor }) => {
     const [presetName, setPresetName] = useState('');
+    const [enteredText, setEnteredText] = useState('');
 
     const onSelectColorScheme = (e) => {
+        setEnteredText(e.target.value)
         setPresetName(e.target.value);
     }
 
@@ -15,22 +17,23 @@ const Input = ({ onChangeColor }) => {
         const oldPresets = JSON.parse(localStorage.getItem('presets')) ||  {};
         const newPreset = {...oldPresets, [presetName] : keys }
         localStorage.setItem( 'presets', JSON.stringify(newPreset));
-        
+        setEnteredText('');
     }
 
     return (
         <>
-        <StyledInput type="text" 
-                name= "colorName" 
-                placeholder="enter scheme name" 
-                onChange={ onSelectColorScheme }
-                />
-        <StyledButton onClick={ onSavePreset }>
-            Save preset
-        </StyledButton>
-        <SelectComponent onChangeColor={ onChangeColor }/>
-         </>   
-      
+            <StyledInput type="text"
+                         name= "colorName"
+                         placeholder="enter scheme name"
+                         onChange={ onSelectColorScheme }
+                         value={ enteredText }
+            />
+            <StyledButton onClick={ onSavePreset }>
+                Save preset
+            </StyledButton>
+            <SelectComponent onChangeColor={ onChangeColor }/>
+        </>
+
     )
 }
 
